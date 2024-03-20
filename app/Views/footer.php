@@ -2,10 +2,10 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6 p-0 footer-copyright">
-                <p class="mb-0">Copyright 2023 © Dunzo theme by pixelstrap.</p>
+                <p class="mb-0"> </p>
               </div>
               <div class="col-md-6 p-0">
-                <p class="heart mb-0">Hand crafted &amp; made with
+                <p class="heart mb-0">Copyright 2024 © OptionBails
                   <svg class="footer-icon">
                     <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#heart"></use>
                   </svg>

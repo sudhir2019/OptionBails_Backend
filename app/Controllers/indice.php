@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\IndiceModel;
+use App\Models\AuthModel;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use Illuminate\Support\Facades\DB;
@@ -12,14 +13,30 @@ class indice extends BaseController
 
     public function createIndices(): string
     {
+        $auth = new AuthModel();
         $model = new IndiceModel();
         $data['indice'] = $model->findAll();
+        
+        $db = \Config\Database::connect();
+        $builder = $db->table( 'user_account' );
+        $builder->select( '*' );
+        $builder->join( 'wallet_master', 'user_account.user_id = wallet_master.user_id', 'left' );
+        $query = $builder->get();
+        $data['user'] = $query->getRow();
 
         return view('create_indice', $data);
     }
     public function createIndicesf(): string
     {
-        return view('create_indicef');
+        $auth = new AuthModel();
+        $db = \Config\Database::connect();
+        $builder = $db->table( 'user_account' );
+        $builder->select( '*' );
+        $builder->join( 'wallet_master', 'user_account.user_id = wallet_master.user_id', 'left' );
+        $query = $builder->get();
+        $data['user'] = $query->getRow();
+        
+        return view('create_indicef', $data);
     }
 
     public function insert()
