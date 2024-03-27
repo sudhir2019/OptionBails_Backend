@@ -76,17 +76,17 @@ header('Access-Control-Allow-Headers: Content-Type');
                 <div class="container-fluid">
                     <div class="page-title">
                         <div class="row">
-                            <!-- <div class="col-sm-6 ps-0">
+                            <div class="col-sm-6 ps-0">
                                 <h3>Sample Page</h3>
-                            </div> -->
-                            <div class="col-sm-12 pe-0">
+                            </div>
+                            <div class="col-sm-6 pe-0">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">
                                             <svg class="stroke-icon">
                                                 <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-home"></use>
                                             </svg></a></li>
                                     <li class="breadcrumb-item">Pages</li>
-                                    <li class="breadcrumb-item active">Indice Page</li>
+                                    <li class="breadcrumb-item active">Sample Page</li>
                                 </ol>
                             </div>
                         </div>
@@ -97,48 +97,7 @@ header('Access-Control-Allow-Headers: Content-Type');
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="intt">
-                                <table class="table table-bordered">
-                                    <thead>
-        
-                                        <th>Index ID</th>
-                                        <th>Index Name</th>
-                                        <th>Index Value</th>
-                                        <th>Index Sub Value</th>
-                                        <th>Match ID</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Start Time</th>
-                                        <th>End Time</th>
-                                        <th>Actions</th>
-        
-                                    </thead>
-                                    <tbody id="table-body">
-                                        <!-- Table rows will be appended dynamically -->
-                                        <?php foreach ($indice as $key => $val) { ?>
-                                            <tr>
-                                                <td><?php echo $val['index_id'] ?></td>
-                                                <td><?php echo $val['index_name'] ?></td>
-                                                <td><?php echo $val['index_value'] ?></td>
-                                                <td><?php echo $val['index_subvalue'] ?></td>
-                                                <td><?php echo $val['match_id'] ?></td>
-                                                <td><?php echo $val['start_date'] ?></td>
-                                                <td><?php echo $val['end_date'] ?></td>
-                                                <td><?php echo $val['start_time'] ?></td>
-                                                <td><?php echo $val['end_time'] ?></td>
-                                                <!-- <td><input type="checkbox" class="form-check-input" name="delete_row"></td> -->
-                                                <td><a href="<?= base_url()?>createIndicesedit/<?php echo $val['index_id']?>">Edit/</a>
-                                                <a onclick="return confirm('You want to delete?')" href="<?= base_url()?>delete/<?php echo $val['index_id']?>">Delete</a></td>
-                                            </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table><br>
-        
-                            </div>
-                            <br>
-                            <div class="btn">
-                                <a href="<?= base_url("createIndicesf") ?>" class="btn btn-primary bold">Add Entry</a>
-                            </div>
+                            
 
                         </div>
                     </div>

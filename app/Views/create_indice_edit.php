@@ -2,6 +2,7 @@
 header('Access-Control-Allow-Origin: http://localhost:8080');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type');
+// print_r($user);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +71,7 @@ header('Access-Control-Allow-Headers: Content-Type');
 
         form {
             padding: 20px;
-        
+
         }
 
         button {
@@ -90,13 +91,12 @@ header('Access-Control-Allow-Headers: Content-Type');
             margin-left: 260px;
         }
 
-        label{
+        label {
             /* text-shadow: 0 0 2rem red; */
             font-weight: bold;
             margin-top: 20px;
             margin-bottom: 2px;
         }
-      
     </style>
 </head>
 
@@ -127,46 +127,52 @@ header('Access-Control-Allow-Headers: Content-Type');
 
                 <div class="cont">
                     <div class="intt">
-                        <form action="<?= site_url('indice/insert') ?>" method="POST">
+                        <form action="<?php echo base_url() ?>updateTable" method="POST">
+                            <div class="form-group">
+                                <!-- <label for="username">Username</label><br> -->
+                                <input type="hidden" name="index_id" id="index_id" value="<?php echo $indice["index_id"] ?>">
+                            </div>
 
+                            
                             <div class="form-group">
                                 <label for="index_name">Index Name</label>
-                                <input type="text" class="form-control" id="index_name" name="index_name">
+                                <input type="text" class="form-control" id="index_name" name="index_name" value="<?php echo $indice["index_name"] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="index_name">Index Value</label>
-                                <input type="text" class="form-control" id="index_value" name="index_value">
-                              
+                                <input type="text" class="form-control" id="index_value" name="index_value" value="<?php echo $indice["index_value"] ?>">
+
                             </div>
                             <div class="form-group">
                                 <label for="index_name">Index SubValue</label>
-                                <input type="text" class="form-control" id="index_subvalue" name="index_subvalue">
+                                <input type="text" class="form-control" id="index_subvalue" name="index_subvalue" value="<?php echo $indice["index_subvalue"] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="match_id">Match ID</label>
-                                <input type="text" class="form-control" id="match_id" name="match_id">
+                                <input type="text" class="form-control" id="match_id" name="match_id" value="<?php echo $indice["match_id"] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="start_date">Start Date</label>
-                                <input type="date" class="form-control" id="start_date" name="start_date">
+                                <input type="date" class="form-control" id="start_date" name="start_date" value="<?php echo $indice["start_date"] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="end_date">End Date</label>
-                                <input type="date" class="form-control" id="end_date" name="end_date">
+                                <input type="date" class="form-control" id="end_date" name="end_date" value="<?php echo $indice["end_date"] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="start_time">Start Time</label>
-                                <input type="time" class="form-control" id="start_time" name="start_time">
+                                <input type="time" class="form-control" id="start_time" name="start_time" value="<?php echo $indice["start_time"] ?>">
                             </div>
                             <div class="form-group">
                                 <label for="end_time">End Time</label>
-                                <input type="time" class="form-control" id="end_time" name="end_time">
+                                <input type="time" class="form-control" id="end_time" name="end_time" value="<?php echo $indice["end_time"] ?>">
                             </div>
                             <!-- <a href="#" class="btn btn-primary">Submit</a> -->
                             <div>
-                                <button type="submit">Insert</button>
-                                <a href="<?= base_url("createIndices")?>">Back</a>
+                                <button type="submit">Update</button>
+                                <a href="<?= base_url("createIndices") ?>">Back</a>
                             </div>
+
                         </form>
 
 
