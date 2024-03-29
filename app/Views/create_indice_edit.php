@@ -2,10 +2,11 @@
 header('Access-Control-Allow-Origin: http://localhost:8080');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type');
-// print_r($user);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Mirrored from admin.pixelstrap.net/dunzo/template/sample-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Mar 2024 05:28:09 GMT -->
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -49,55 +50,6 @@ header('Access-Control-Allow-Headers: Content-Type');
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/@icon/themify-icons@1.0.1-alpha.3/themify-icons.min.css" rel="stylesheet">
-    <style>
-        .cont {
-            margin-top: 110px;
-            margin-left: 190px;
-            margin-right: 0px;
-
-            width: 1000px;
-            border: 0.1rem solid;
-
-        }
-
-        /* .intt {
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: antiquewhite;
-        } */
-
-
-        form {
-            padding: 20px;
-
-        }
-
-        button {
-            background-color: blue;
-            /* Green */
-            border: none;
-            color: white;
-            /* padding: 15px 32px; */
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            border-radius: 10px;
-            width: 300px;
-            height: 40px;
-            margin-top: 30px;
-            margin-left: 260px;
-        }
-
-        label {
-            /* text-shadow: 0 0 2rem red; */
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 2px;
-        }
-    </style>
 </head>
 
 <body>
@@ -113,121 +65,144 @@ header('Access-Control-Allow-Headers: Content-Type');
     <!-- tap on tap ends-->
     <!-- page-wrapper Start-->
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
-        <!-- Page Header Start-->
-
         <?php require_once('header.php'); ?>
         <!-- Page Header Ends-->
         <!-- Page Body Start-->
         <div class="page-body-wrapper">
-            <!-- Page Sidebar Start-->
             <?php require_once('sidebar.php'); ?>
+            <!-- Page Sidebar Start-->
             <!-- Page Sidebar Ends-->
-            <div class="container mt-5">
-
-
-                <div class="cont">
-                    <div class="intt">
-                        <form action="<?php echo base_url() ?>updateTable" method="POST">
-                            <div class="form-group">
-                                <!-- <label for="username">Username</label><br> -->
-                                <input type="hidden" name="index_id" id="index_id" value="<?php echo $indice["index_id"] ?>">
+            <div class="page-body">
+                <div class="container-fluid">
+                    <div class="page-title">
+                        <div class="row">
+                            <div class="col-sm-6 ps-0">
+                                <h3>EDIT FORM</h3>
                             </div>
-
-                            
-                            <div class="form-group">
-                                <label for="index_name">Index Name</label>
-                                <input type="text" class="form-control" id="index_name" name="index_name" value="<?php echo $indice["index_name"] ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="index_name">Index Value</label>
-                                <input type="text" class="form-control" id="index_value" name="index_value" value="<?php echo $indice["index_value"] ?>">
+                            <div class="col-sm-6 pe-0">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">
+                                            <svg class="stroke-icon">
+                                                <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-home"></use>
+                                            </svg></a></li>
+                                    <li class="breadcrumb-item">Pages</li>
+                                    <li class="breadcrumb-item active">edit Page</li>
+                                </ol>
 
                             </div>
-                            <div class="form-group">
-                                <label for="index_name">Index SubValue</label>
-                                <input type="text" class="form-control" id="index_subvalue" name="index_subvalue" value="<?php echo $indice["index_subvalue"] ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="match_id">Match ID</label>
-                                <input type="text" class="form-control" id="match_id" name="match_id" value="<?php echo $indice["match_id"] ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="start_date">Start Date</label>
-                                <input type="date" class="form-control" id="start_date" name="start_date" value="<?php echo $indice["start_date"] ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="end_date">End Date</label>
-                                <input type="date" class="form-control" id="end_date" name="end_date" value="<?php echo $indice["end_date"] ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="start_time">Start Time</label>
-                                <input type="time" class="form-control" id="start_time" name="start_time" value="<?php echo $indice["start_time"] ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="end_time">End Time</label>
-                                <input type="time" class="form-control" id="end_time" name="end_time" value="<?php echo $indice["end_time"] ?>">
-                            </div>
-                            <!-- <a href="#" class="btn btn-primary">Submit</a> -->
-                            <div>
-                                <button type="submit">Update</button>
-                                <a href="<?= base_url("createIndices") ?>">Back</a>
-                            </div>
-
-                        </form>
 
 
+
+                            <div class="col-md-12">
+                                <div class="card" style="margin-top: 30px;">
+                                    <div class="card-header pb-0">
+                                        <!-- <h3>Entry form</h3> -->
+                                        <!-- <p class="f-m-light mt-1">
+                                            Use the <code>.form-label </code>and <code>.form-control </code>through create basic form.</p> -->
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-wrapper border rounded-3">
+                                            <form class="row g-3 " action="<?php echo base_url() ?>updateTable" method="POST">
+                                                <div class="form-group">
+                                                    <!-- <label for="username">Username</label><br> -->
+                                                    <input type="hidden" name="index_id" id="index_id" value="<?php echo $indice["index_id"] ?>">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="index_name">Index Name</label>
+                                                    <input class="form-control" id="index_name" name="index_name" type="text" value="<?php echo $indice["index_name"] ?>">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="index_value">Index Value</label>
+                                                    <input class="form-control" id="index_value" name="index_value" type="text" value="<?php echo $indice["index_value"] ?>">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="index_subvalue">Index SubValue</label>
+                                                    <input class="form-control" id="index_subvalue" name="index_subvalue" type="text" value="<?php echo $indice["index_subvalue"] ?>">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="match_id">Match ID</label>
+                                                    <input class="form-control" id="match_id" name="match_id" type="text" value="<?php echo $indice["match_id"] ?>">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="start_date">Start Date</label>
+                                                    <input class="form-control" id="start_date" name="start_date" type="date" value="<?php echo $indice["start_date"] ?>">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="end_date">End Date</label>
+                                                    <input class="form-control" id="end_date"  name="end_date" type="date" value="<?php echo $indice["end_date"] ?>">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="start_time">Start Time</label>
+                                                    <input class="form-control" id="start_time" name="start_time" type="time" value="<?php echo $indice["start_time"] ?>">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="end_time">End Time</label>
+                                                    <input class="form-control" id="end_time" name="end_time" type="time" value="<?php echo $indice["end_time"] ?>">
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-check checkbox-checked">
+                                                        <input class="form-check-input" id="gridCheck1" type="checkbox">
+                                                        <label class="form-check-label" for="gridCheck1">Check me out</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary" type="submit">EDIT </button>
+                                                    <a href="<?= base_url("createIndices") ?>"> <button class="btn btn-primary" type="submit">BACK </button></a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
                     </div>
                 </div>
+
+                <!-- Container-fluid starts-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Container-fluid Ends-->
             </div>
-
-
             <!-- footer start-->
             <?php require_once('footer.php'); ?>
         </div>
     </div>
     <!-- latest jquery-->
-    <script src="<?php echo base_url(); ?>/assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
     <!-- Bootstrap js-->
-    <script src="<?php echo base_url(); ?>/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- feather icon js-->
-    <script src="<?php echo base_url(); ?>/assets/js/icons/feather-icon/feather.min.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/icons/feather-icon/feather-icon.js"></script>
+    <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
+    <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
     <!-- scrollbar js-->
-    <script src="<?php echo base_url(); ?>/assets/js/scrollbar/simplebar.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/scrollbar/custom.js"></script>
+    <script src="../assets/js/scrollbar/simplebar.js"></script>
+    <script src="../assets/js/scrollbar/custom.js"></script>
     <!-- Sidebar jquery-->
-    <script src="<?php echo base_url(); ?>/assets/js/config.js"></script>
+    <script src="../assets/js/config.js"></script>
     <!-- Plugins JS start-->
-    <script src="<?php echo base_url(); ?>/assets/js/sidebar-menu.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/sidebar-pin.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/slick/slick.min.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/slick/slick.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/header-slick.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/chart/morris-chart/raphael.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/chart/morris-chart/morris.js"> </script>
-    <script src="<?php echo base_url(); ?>/assets/js/chart/morris-chart/prettify.min.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/chart/apex-chart/apex-chart.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/chart/apex-chart/stock-prices.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/chart/apex-chart/moment.min.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/notify/bootstrap-notify.min.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/dashboard/default.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/notify/index.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/datatable/datatables/datatable.custom.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/datatable/datatables/datatable.custom1.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/owlcarousel/owl.carousel.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/owlcarousel/owl-custom.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/typeahead/handlebars.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/typeahead/typeahead.bundle.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/typeahead/typeahead.custom.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/typeahead-search/handlebars.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/typeahead-search/typeahead-custom.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/height-equal.js"></script>
+    <script src="../assets/js/sidebar-menu.js"></script>
+    <script src="../assets/js/sidebar-pin.js"></script>
+    <script src="../assets/js/slick/slick.min.js"></script>
+    <script src="../assets/js/slick/slick.js"></script>
+    <script src="../assets/js/header-slick.js"></script>
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
-    <script src="<?php echo base_url(); ?>/assets/js/script.js"></script>
-    <script src="<?php echo base_url(); ?>/assets/js/theme-customizer/customizer.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/theme-customizer/customizer.js"></script>
     <!-- Plugin used-->
 </body>
+
+<!-- Mirrored from admin.pixelstrap.net/dunzo/template/sample-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Mar 2024 05:28:09 GMT -->
 
 </html>

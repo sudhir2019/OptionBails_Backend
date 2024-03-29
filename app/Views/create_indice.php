@@ -76,19 +76,118 @@ header('Access-Control-Allow-Headers: Content-Type');
                 <div class="container-fluid">
                     <div class="page-title">
                         <div class="row">
-                            <!-- <div class="col-sm-6 ps-0">
-                                <h3>Sample Page</h3>
-                            </div> -->
-                            <div class="col-sm-12 pe-0">
+                            <div class="col-sm-6 ps-0">
+                                <h3>Indice Page</h3>
+                            </div>
+                            <div class="col-sm-6 pe-0">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">
                                             <svg class="stroke-icon">
                                                 <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-home"></use>
                                             </svg></a></li>
                                     <li class="breadcrumb-item">Pages</li>
-                                    <li class="breadcrumb-item active">Indice Page</li>
+                                    <li class="breadcrumb-item active">indice Page</li>
                                 </ol>
                             </div>
+
+
+                            <div class="col-sm-12">
+                                <div class="card" style="margin-top: 30px;">
+                                    <div class="card-header pb-0 card-no-border">
+                                        <!-- <h3>Zero Configuration</h3><span>DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function:<code>$().DataTable();</code>.</span><span>Searching, ordering and paging goodness will be immediately added to the table, as shown in this example.</span> -->
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive custom-scrollbar">
+
+                                            <div id="basic-1_wrapper" class="dataTables_wrapper no-footer">
+                                                <!-- <div class="dataTables_length" id="basic-1_length">
+                                                    <label>
+                                                        Show
+                                                        <select name="basic-1_length" aria-controls="basic-1" class="form-select">
+                                                            <option value="10">10</option>
+                                                            <option value="25">25</option>
+                                                            <option value="50">50</option>
+                                                            <option value="100">100</option>
+                                                        </select>
+                                                        entries
+                                                    </label>
+                                                </div>
+                                                <div id="basic-1_filter" class="dataTables_filter">
+                                                    <label>
+                                                        Search:
+                                                        <input type="search" class="form-control" placeholder="" aria-controls="basic-1">
+                                                    </label>
+                                                </div> -->
+                                                <table class="display dataTable no-footer" id="basic-1" role="grid" aria-describedby="basic-1_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 153.3px;">
+                                                                Index ID
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
+                                                                Index Name
+                                                            </th>
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 153.3px;">
+                                                                Index Value
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
+                                                                Index Sub Value
+                                                            </th>
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 153.3px;">
+                                                                Match ID
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
+                                                                Start Date
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
+                                                                End Date
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
+                                                                Start Time
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
+                                                                End Time
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
+                                                                Action
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php foreach ($indice as $key => $val) { ?>
+                                                            <tr>
+                                                                <td><?php echo $val['index_id'] ?></td>
+                                                                <td><?php echo $val['index_name'] ?></td>
+                                                                <td><?php echo $val['index_value'] ?></td>
+                                                                <td><?php echo $val['index_subvalue'] ?></td>
+                                                                <td><?php echo $val['match_id'] ?></td>
+                                                                <td><?php echo $val['start_date'] ?></td>
+                                                                <td><?php echo $val['end_date'] ?></td>
+                                                                <td><?php echo $val['start_time'] ?></td>
+                                                                <td><?php echo $val['end_time'] ?></td>
+                                                                <td><a href="<?= base_url() ?>createIndicesedit/<?php echo $val['index_id'] ?>">Edit/</a>
+                                                                    <a onclick="return confirm('You want to delete?')" href="<?= base_url() ?>delete/<?php echo $val['index_id'] ?>">Delete</a>
+                                                                </td>
+                                                            </tr>
+                                                            </tr>
+                                                        <?php } ?>
+
+
+                                                    </tbody>
+
+
+                                                </table>
+                                                <div class="btn">
+                                                    <a href="<?= base_url("createIndicesf") ?>" class="btn btn-primary bold">Add Entry</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -97,48 +196,7 @@ header('Access-Control-Allow-Headers: Content-Type');
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="intt">
-                                <table class="table table-bordered">
-                                    <thead>
-        
-                                        <th>Index ID</th>
-                                        <th>Index Name</th>
-                                        <th>Index Value</th>
-                                        <th>Index Sub Value</th>
-                                        <th>Match ID</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Start Time</th>
-                                        <th>End Time</th>
-                                        <th>Actions</th>
-        
-                                    </thead>
-                                    <tbody id="table-body">
-                                        <!-- Table rows will be appended dynamically -->
-                                        <?php foreach ($indice as $key => $val) { ?>
-                                            <tr>
-                                                <td><?php echo $val['index_id'] ?></td>
-                                                <td><?php echo $val['index_name'] ?></td>
-                                                <td><?php echo $val['index_value'] ?></td>
-                                                <td><?php echo $val['index_subvalue'] ?></td>
-                                                <td><?php echo $val['match_id'] ?></td>
-                                                <td><?php echo $val['start_date'] ?></td>
-                                                <td><?php echo $val['end_date'] ?></td>
-                                                <td><?php echo $val['start_time'] ?></td>
-                                                <td><?php echo $val['end_time'] ?></td>
-                                                <!-- <td><input type="checkbox" class="form-check-input" name="delete_row"></td> -->
-                                                <td><a href="<?= base_url()?>createIndicesedit/<?php echo $val['index_id']?>">Edit/</a>
-                                                <a onclick="return confirm('You want to delete?')" href="<?= base_url()?>delete/<?php echo $val['index_id']?>">Delete</a></td>
-                                            </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table><br>
-        
-                            </div>
-                            <br>
-                            <div class="btn">
-                                <a href="<?= base_url("createIndicesf") ?>" class="btn btn-primary bold">Add Entry</a>
-                            </div>
+
 
                         </div>
                     </div>
