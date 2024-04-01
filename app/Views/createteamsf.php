@@ -2,7 +2,6 @@
 header('Access-Control-Allow-Origin: http://localhost:8080');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type');
-print_r($team)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +77,7 @@ print_r($team)
                     <div class="page-title">
                         <div class="row">
                             <div class="col-sm-6 ps-0">
-                                <h3>Create Team</h3>
+                                <h3>INSERT FORM</h3>
                             </div>
                             <div class="col-sm-6 pe-0">
                                 <ol class="breadcrumb">
@@ -87,76 +86,73 @@ print_r($team)
                                                 <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-home"></use>
                                             </svg></a></li>
                                     <li class="breadcrumb-item">Pages</li>
-                                    <li class="breadcrumb-item active">createTeam Page</li>
+                                    <li class="breadcrumb-item active">insert Page</li>
                                 </ol>
+
                             </div>
 
-                            <div class="col-sm-12">
+
+
+                            <div class="col-md-12" >
                                 <div class="card" style="margin-top: 30px;">
-                                    <div class="card-header pb-0 card-no-border">
-                                        <!-- <h3>Zero Configuration</h3><span>DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function:<code>$().DataTable();</code>.</span><span>Searching, ordering and paging goodness will be immediately added to the table, as shown in this example.</span> -->
+                                    <div class="card-header pb-0">
+                                        <!-- <h3>Entry form</h3> -->
+                                        <!-- <p class="f-m-light mt-1">
+                                            Use the <code>.form-label </code>and <code>.form-control </code>through create basic form.</p> -->
                                     </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive custom-scrollbar">
-
-                                            <div id="basic-1_wrapper" class="dataTables_wrapper no-footer">
-                                                <!-- <div class="dataTables_length" id="basic-1_length">
-                                                    <label>
-                                                        Show
-                                                        <select name="basic-1_length" aria-controls="basic-1" class="form-select">
-                                                            <option value="10">10</option>
-                                                            <option value="25">25</option>
-                                                            <option value="50">50</option>
-                                                            <option value="100">100</option>
-                                                        </select>
-                                                        entries
-                                                    </label>
+                                    <div class="card-body" >
+                                        <div class="card-wrapper border rounded-3">
+                                            <form class="row g-3 " action="<?= site_url('indice/insert') ?>" method="POST">
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="index_name">Index Name</label>
+                                                    <input class="form-control" id="team_name" name="team_name" type="text" placeholder="Enter Your team Name">
                                                 </div>
-                                                <div id="basic-1_filter" class="dataTables_filter">
-                                                    <label>
-                                                        Search:
-                                                        <input type="search" class="form-control" placeholder="" aria-controls="basic-1">
-                                                    </label>
-                                                </div> -->
-                                                <table class="display dataTable no-footer" id="basic-1" role="grid" aria-describedby="basic-1_info">
-                                                    <thead>
-                                                        <tr role="row">
-                                                            <th class="sorting_asc" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 153.3px;">
-                                                                Index ID
-                                                            </th>
-                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
-                                                                Index Name
-                                                            </th>
-                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
-                                                                Action
-                                                            </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php foreach ($team as $key => $val) { ?>
-                                                            <tr>
-                                                                <td><?php echo $val['team_id'] ?></td>
-                                                                <td><?php echo $val['team_name'] ?></td>
-                                                                <td><a href="<?= base_url() ?>createIndicesedit">Edit/</a>
-                                                                    <a onclick="return confirm('You want to delete?')" href="<?= base_url() ?>delete/">Delete</a>
-                                                                </td>
-                                                            </tr>
-                                                            </tr>
-                                                        <?php } ?>
-
-
-                                                    </tbody>
-
-
-                                                </table>
-                                                <div class="btn">
-                                                    <a href="<?= base_url("createIndicesf") ?>" class="btn btn-primary bold">Add Entry</a>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="index_value">Index Value</label>
+                                                    <input class="form-control" id="index_value" name="index_value" type="text" placeholder="Enter Your Index Value">
                                                 </div>
-                                            </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="index_subvalue">Index SubValue</label>
+                                                    <input class="form-control" id="index_subvalue" type="text" placeholder="Enter Your Index SubValue">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="match_id">Match ID</label>
+                                                    <input class="form-control" id="match_id" type="text" placeholder="Enter Your Match ID">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="start_date">Start Date</label>
+                                                    <input class="form-control" id="start_date" type="date" placeholder="Enter Your Start Date">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="end_date">End Date</label>
+                                                    <input class="form-control" id="end_date" type="date" placeholder="Enter Your End Date">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="start_time">Start Time</label>
+                                                    <input class="form-control" id="start_time" type="time" placeholder="Enter Your Strat Time">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label" for="end_time">End Time</label>
+                                                    <input class="form-control" id="end_time" type="time" placeholder="Enter Your End Time">
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-check checkbox-checked">
+                                                        <input class="form-check-input" id="gridCheck1" type="checkbox">
+                                                        <label class="form-check-label" for="gridCheck1">Check me out</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary" type="submit">INSERT </button>
+                                                    <a href="<?= base_url("createIndices")?>"> <button class="btn btn-primary" type="submit">BACK </button></a>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
+
 
 
                         </div>
@@ -167,20 +163,6 @@ print_r($team)
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                         </div>

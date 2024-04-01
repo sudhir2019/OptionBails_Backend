@@ -119,5 +119,5 @@ class indice extends BaseController
         $userModel->where('index_id', $index_id)->delete();
         return redirect()->to('/createIndices');
     }
-    
+
 }

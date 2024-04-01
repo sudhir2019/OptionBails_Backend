@@ -26,6 +26,7 @@ $routes->match(['get','post'],'delete/(:any)', 'indice::delete/$1');
 $routes->post('/updateTable','indice::updateTable');
 $routes->post('indice/insert', 'indice::insert');
 
+
 // for teams
 $routes->get('/createteam', 'createteam::createteams');
 

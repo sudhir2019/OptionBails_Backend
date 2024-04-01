@@ -57,7 +57,7 @@
               <li><a href="<?= base_url("createIndices") ?>">Create Indice/Match</a></li>
               <li><a href="<?= base_url("createteam") ?>">Create Teams</a></li>
               <li><a href="/createIndice">Create User</a></li>
-              <!--  -->
+       
             </ul>
           </li>
 
