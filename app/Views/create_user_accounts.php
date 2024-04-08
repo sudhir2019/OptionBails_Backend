@@ -2,7 +2,6 @@
 header('Access-Control-Allow-Origin: http://localhost:8080');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +77,7 @@ header('Access-Control-Allow-Headers: Content-Type');
                     <div class="page-title">
                         <div class="row">
                             <div class="col-sm-6 ps-0">
-                                <h3>Create Team</h3>
+                                <h3>User Accounts Page</h3>
                             </div>
                             <div class="col-sm-6 pe-0">
                                 <ol class="breadcrumb">
@@ -87,32 +86,14 @@ header('Access-Control-Allow-Headers: Content-Type');
                                                 <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-home"></use>
                                             </svg></a></li>
                                     <li class="breadcrumb-item">Pages</li>
-                                    <li class="breadcrumb-item active">createTeam Page</li>
+                                    <li class="breadcrumb-item active">user account Page</li>
                                 </ol>
                             </div>
-
-
-                            <form action="<?= site_url('createteam/insert') ?>" method="POST">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <!-- <label for="username">Username</label><br> -->
-                                        <input type="hidden" name="team_id" id="team_id" >
-                                    </div>
-                                    <div class="col-md-6">
-                                        <!-- <label class="form-label" for="team_name">Team Name</label> -->
-                                        <input class="form-control" id="team_name" name="team_name" type="text" placeholder="Enter Your team Name">
-                                    </div>
-                                    <div class="col-12 col-md-auto">
-                                        <button class="btn btn-primary" type="submit">INSERT</button>
-                                    </div>
-                                </div>
-                            </form>
 
 
                             <div class="col-sm-12">
                                 <div class="card" style="margin-top: 30px;">
                                     <div class="card-header pb-0 card-no-border">
-
                                         <!-- <h3>Zero Configuration</h3><span>DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function:<code>$().DataTable();</code>.</span><span>Searching, ordering and paging goodness will be immediately added to the table, as shown in this example.</span> -->
                                     </div>
                                     <div class="card-body">
@@ -137,14 +118,26 @@ header('Access-Control-Allow-Headers: Content-Type');
                                                         <input type="search" class="form-control" placeholder="" aria-controls="basic-1">
                                                     </label>
                                                 </div> -->
-                                                <table class="display dataTable no-footer" id="basic-1" role="grid" aria-describedby="basic-1_info">
+                                                <table class="display dataTable no-footer col-sm-12" id="basic-1" role="grid" aria-describedby="basic-1_info">
                                                     <thead>
                                                         <tr role="row">
                                                             <th class="sorting_asc" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 153.3px;">
-                                                                Index ID
+                                                                User Id 
                                                             </th>
                                                             <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
-                                                                Index Name
+                                                                User Name
+                                                            </th>
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 153.3px;">
+                                                                Password
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
+                                                                Email
+                                                            </th>
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 153.3px;">
+                                                                Status
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
+                                                                Mobile No
                                                             </th>
                                                             <th class="sorting" tabindex="0" aria-controls="basic-1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 247.387px;">
                                                                 Action
@@ -152,14 +145,17 @@ header('Access-Control-Allow-Headers: Content-Type');
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php foreach ($team as $key => $val) { ?>
+                                                        <?php foreach ($mayur as $key => $val) { ?>
                                                             <tr>
-                                                                <td><?php echo $val['team_id'] ?></td>
-                                                                <td><?php echo $val['team_name'] ?></td>
-                                                                <!--  -->
-                                                                <td>
-                                                                <a href="<?= base_url() ?>createteamsf/<?php echo $val['team_id'] ?>">Edit/</a>
-                                                                    <a onclick="return confirm('You want to delete?')" href="<?= base_url() ?>deleteteam/<?php echo $val['team_id'] ?>">Delete</a>
+                                                                <td><?php echo $val['user_id'] ?></td>
+                                                                <td><?php echo $val['user_name'] ?></td>
+                                                                <td><?php echo $val['password'] ?></td>
+                                                                <td><?php echo $val['email'] ?></td>
+                                                                <td><?php echo $val['status'] ?></td>
+                                                                <td><?php echo $val['mobile_no'] ?></td>
+                                                                
+                                                                <td><a href="<?= base_url() ?>createUseraccountedit/<?php echo $val['user_id'] ?>">Edit/</a>
+                                                                <a onclick="return confirm('You want to delete?')" href="<?= base_url() ?>deleteuser/<?php echo $val['user_id'] ?>">Delete</a>
                                                                 </td>
                                                             </tr>
                                                             </tr>
@@ -170,14 +166,15 @@ header('Access-Control-Allow-Headers: Content-Type');
 
 
                                                 </table>
-                                                <div >
-                                                    <!-- <a href="#" class="btn btn-primary bold"></a> -->
+                                                <div class="btn">
+                                                    <a href="<?= base_url("createUseraccountf") ?>" class="btn btn-primary bold">Add Entry</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
 
 
                         </div>
@@ -188,20 +185,6 @@ header('Access-Control-Allow-Headers: Content-Type');
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                         </div>

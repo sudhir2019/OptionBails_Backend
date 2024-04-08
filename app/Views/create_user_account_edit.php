@@ -77,7 +77,7 @@ header('Access-Control-Allow-Headers: Content-Type');
                     <div class="page-title">
                         <div class="row">
                             <div class="col-sm-6 ps-0">
-                                <h3>INSERT FORM</h3>
+                                <h3>User Account Update FORM</h3>
                             </div>
                             <div class="col-sm-6 pe-0">
                                 <ol class="breadcrumb">
@@ -86,7 +86,7 @@ header('Access-Control-Allow-Headers: Content-Type');
                                                 <use href="https://admin.pixelstrap.net/dunzo/assets/svg/icon-sprite.svg#stroke-home"></use>
                                             </svg></a></li>
                                     <li class="breadcrumb-item">Pages</li>
-                                    <li class="breadcrumb-item active">insert Page</li>
+                                    <li class="breadcrumb-item active">edit Page</li>
                                 </ol>
 
                             </div>
@@ -95,57 +95,47 @@ header('Access-Control-Allow-Headers: Content-Type');
 
                             <div class="col-md-12" >
                                 <div class="card" style="margin-top: 30px;">
-                                    <!-- <div class="card-header pb-0">
-                                      
-                                            <div class="col-md-6">
-                                                    <label class="form-label" for="index_name">Team Name</label>
-                                                    <input class="form-control" id="team_name" name="team_name" type="text" placeholder="Enter Your team Name">
-                                                </div>
-                                    </div> -->
+                                    <div class="card-header pb-0">
+                                        <!-- <h3>Entry form</h3> -->
+                                        <!-- <p class="f-m-light mt-1">
+                                            Use the <code>.form-label </code>and <code>.form-control </code>through create basic form.</p> -->
+                                    </div>
                                     <div class="card-body" >
                                         <div class="card-wrapper border rounded-3">
-                                            <form class="row g-3 " action="<?= site_url('indice/insert') ?>" method="POST">
-                                                <div class="col-md-6">
-                                                    <label class="form-label" for="index_name">Index Name</label>
-                                                    <input class="form-control" id="index_name" name="index_name" type="text" placeholder="Enter Your Index Name">
+                                            <form class="row g-3 "  action="<?php echo base_url() ?>updateTablle" method="POST">
+                                            <div class="form-group">
+                                                    <!-- <label for="username">Username</label><br> -->
+                                                    <input type="hidden" name="user_id" id="user_id" value="<?php echo $account["user_id"] ?>">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="form-label" for="index_value">Index Value</label>
-                                                    <input class="form-control" id="index_value" name="index_value" type="text" placeholder="Enter Your Index Value">
+                                                    <label class="form-label" for="user_name">User Name</label>
+                                                    <input class="form-control" id="user_name" name="user_name" type="text" value="<?php echo $account["user_name"] ?>">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="form-label" for="index_subvalue">Index SubValue</label>
-                                                    <input class="form-control" id="index_subvalue" type="text" placeholder="Enter Your Index SubValue">
+                                                    <label class="form-label" for="password">Password</label>
+                                                    <input class="form-control" id="password" name="password" type="password" value="<?php echo $account["password"] ?>">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="form-label" for="match_id">Match ID</label>
-                                                    <input class="form-control" id="match_id" type="text" placeholder="Enter Your Match ID">
+                                                    <label class="form-label" for="email">Email</label>
+                                                    <input class="form-control" id="email" name="email" type="email" value="<?php echo $account["email"] ?>" >
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="form-label" for="start_date">Start Date</label>
-                                                    <input class="form-control" id="start_date" type="date" placeholder="Enter Your Start Date">
+                                                    <label class="form-label" for="status">Status</label>
+                                                    <input class="form-control" id="status" name="status" type="text" value="<?php echo $account["status"] ?>">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <label class="form-label" for="end_date">End Date</label>
-                                                    <input class="form-control" id="end_date" type="date" placeholder="Enter Your End Date">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="form-label" for="start_time">Start Time</label>
-                                                    <input class="form-control" id="start_time" type="time" placeholder="Enter Your Strat Time">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label class="form-label" for="end_time">End Time</label>
-                                                    <input class="form-control" id="end_time" type="time" placeholder="Enter Your End Time">
-                                                </div>
+                                                    <label class="form-label" for="mobile_no">Mobile No</label>
+                                                    <input class="form-control" id="mobile_no" name="mobile_no" type="number" value="<?php echo $account["mobile_no"] ?>">
+                                                
                                                 <div class="col-12">
                                                     <div class="form-check checkbox-checked">
-                                                        <input class="form-check-input" id="gridCheck1" type="checkbox">
-                                                        <label class="form-check-label" for="gridCheck1">Check me out</label>
+                                                        <!-- <input class="form-check-input" id="gridCheck1" type="checkbox">
+                                                        <label class="form-check-label" for="gridCheck1">Check me out</label> -->
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button class="btn btn-primary" type="submit">INSERT </button>
-                                                    <a href="<?= base_url("createIndices")?>"> <button class="btn btn-primary" type="submit">BACK </button></a>
+                                                    <button class="btn btn-primary" type="submit">Update </button>
+                                                    <a href="<?= base_url("createUseraccount")?>"> <button class="btn btn-primary" type="submit">BACK </button></a>
                                                 </div>
                                             </form>
                                         </div>

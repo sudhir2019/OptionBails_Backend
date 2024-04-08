@@ -37,8 +37,7 @@
           </li>
 
           <!-- Users -->
-          <li class="sidebar-main-title">
-          </li>
+   
           <li class="sidebar-list"><i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title" href="/dashboard">
               <svg class="fill-icon">
                 <use href="#"></use>
@@ -46,9 +45,21 @@
 
           </li>
 
-          <!-- Indices -->
-          <li class="sidebar-main-title">
+
+          <li class="sidebar-list"><i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title" href="#">
+              <svg class="fill-icon">
+                <use href="/createMarket"></use>
+              </svg><span>Series</span></a>
+            <ul class="sidebar-submenu">
+              <li><a href="<?= base_url("allseries") ?>">ALL Series</a></li>
+              <li><a href="<?= base_url("addcustomseries") ?>">ADD Series</a></li>
+             
+       
+            </ul>
           </li>
+
+          <!-- Indices -->
+     
           <li class="sidebar-list"><i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title" href="#">
               <svg class="fill-icon">
                 <use href="/createMarket"></use>
@@ -56,14 +67,13 @@
             <ul class="sidebar-submenu">
               <li><a href="<?= base_url("createIndices") ?>">Create Indice/Match</a></li>
               <li><a href="<?= base_url("createteam") ?>">Create Teams</a></li>
-              <li><a href="/createIndice">Create User</a></li>
+              <li><a href="<?= base_url("createUseraccount") ?>">Create User</a></li>
        
             </ul>
           </li>
 
           <!-- Users -->
-          <li class="sidebar-main-title">
-          </li>
+   
           <li class="sidebar-list"><i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title" href="#">
               <svg class="fill-icon">
                 <use href="/createMarket"></use>
@@ -76,8 +86,7 @@
           </li>
 
           <!-- Wallets -->
-          <li class="sidebar-main-title">
-          </li>
+    
           <li class="sidebar-list"><i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title" href="#">
               <svg class="fill-icon">
                 <use href="/createMarket"></use>
@@ -91,8 +100,7 @@
           </li>
 
           <!-- Reports -->
-          <li class="sidebar-main-title">
-          </li>
+ 
           <li class="sidebar-list"><i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title" href="#">
               <svg class="fill-icon">
                 <use href="#"></use>
@@ -115,8 +123,7 @@
 
 
           <!-- Reports -->
-          <li class="sidebar-main-title">
-          </li>
+     
           <li class="sidebar-list"><i class="fa fa-thumb-tack"> </i><a class="sidebar-link sidebar-title" href="#">
               <svg class="fill-icon">
                 <use href="#"></use>
